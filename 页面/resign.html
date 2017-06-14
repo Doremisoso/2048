@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Slick Login</title>
+    <link rel="stylesheet" type="text/css" href="resign.css" />
+   
+    <script type="text/javascript" src="placeholder.js"></script>
+</head>
+<script>
+		var userdata={
+			username:"",
+			pwd:""};
+		
+		
+	function resign(){
+		var username = document.forms['slick-resign']["username"].value;
+		var pwd = document.forms['slick-resign']["password"].value;
+		var pwd2 = document.forms['slick-resign']["password2"].value;
+		if(username == null || username == ""){
+			alert("用户名不能为空");
+			return false;}
+		if(pwd == null	|| pwd == ""){
+			alert("请输入密码");
+			return false;}
+		if(pwd2 == null	|| pwd2 == ""){
+		alert("请确认密码");
+		return false;}
+		if(pwd != pwd2){
+		alert("前后密码不一致");
+		return false;}
+			}
+			
+		var strKey = "username";
+		var strKey2 = "pwd";
+		var storage = window.localStorage;
+		
+		if(storage){
+			storage.setItem(strKey,data);}
+</script>
+ 
+<body>
+<h1>R e s i g n </h1>
+    <form id="slick-resign" action="Login.html" onSubmit="return resign()" method="post">
+        <label for="username">username</label>
+		<input type="text" name="username" class="placeholder" placeholder="username"> <br>
+        <label for="password">password</label>
+		<input type="password" name="password" class="placeholder" placeholder="password"> <br>
+        <label for="password">password</label>
+        <input type="password" name="password2" class="placeholder" placeholder="password"> <br>
+        <input type="submit" value="注册" onClick="addUser()">
+    </form>
+</body>
+ 
+</html>

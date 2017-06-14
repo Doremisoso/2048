@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+    <title>Slick Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="placeholder.js"></script>
+</head>
+<script>
+	var key1 = "username";
+	var key2 = "pwd";
+	var storage = window.localStorage;
+	var eusername = localStorage.getItem(key1);
+	var epwd = localStorage.getItem(key2);
+	function login(){
+		var username = document.forms['slick-login']["username"].value;
+		var pwd = document.forms['slick-login']["password"].value;
+		if(username == null || username == ""){
+			alert("用户名不能为空");
+			return false;}
+		if(username != eusername){
+			alert("用户不存在");
+			return false;}
+			if(pwd == null	|| pwd == ""){
+				alert("请输入密码");
+				return false;}
+				if(pwd != epwd){
+				alert("密码错误");
+				return false;}}
+</script>
+ 
+<body>
+<h1>L o g i n</h1>
+    <form id="slick-login" action="js期末大作业.html" onSubmit="return login()" method="post">
+        <label for="username">username</label>
+		<input type="text" name="username" class="placeholder" placeholder="username"> <br>
+        <label for="password">password</label>
+		<input type="password" name="password" class="placeholder" placeholder="password"> <br>
+        <input type="submit" value="登录">
+    </form>
+<div id="resign">
+<a href="resign.html">创建账号</a></div>
+</body>
+ 
+</html>
